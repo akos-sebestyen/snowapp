@@ -11,9 +11,6 @@ ul div {
     width: 60px;
 }
 
-ContentBlock {
-    border: 2px solid black;
-}
 
 .data-block-title {
     padding:5px;

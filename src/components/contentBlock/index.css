@@ -1,7 +1,6 @@
-.temp {
-    border: solid 2px black;
-}
+
 .content-block {
     width: 150px;
     height: 150px;
+    border: solid 2px black;
 }

@@ -9,6 +9,7 @@
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
+  "proxy": "http://localhost:8081",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
