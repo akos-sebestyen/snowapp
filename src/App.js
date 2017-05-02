@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ContentRow from './components/contentRow';
 import Loading from './components/loading';
+import Dropdown from './components/dropdown';
 
 class App extends Component {
   constructor(props) {
@@ -11,16 +12,28 @@ class App extends Component {
       mountainData: {
 
       },
-      mountainList: [ 'cypress-mountain', 'whistler-blackcomb']
+      mountainList: ['cypress-mountain', 'whistler-blackcomb'],
+      selectedMountain: 'cypress-mountain'
     };
   }
   componentWillMount() {
     fetch('/api/cypress-mountain')
-      .then(res => {console.log(res); return res.json();})
+      .then(res => res.json())
       .then(data => {
-        console.log('back from Fetch!' + data);
         this.setState({ mountainData: data });
       });
+  }
+  dropdownChanged(event) {
+    let mountain = event.target.value;
+    fetch(`/api/${mountain}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          mountainData: data,
+          selectedMountain: mountain
+        });
+      });
+    // this.setState({ selectedMountain: event.target.value });
   }
   render() {
     return (
@@ -30,14 +43,18 @@ class App extends Component {
           <h2>Dis a weather app</h2>
           <h3>{this.state.mountainData.name}</h3>
         </div>
+        <Dropdown selected={this.state.selectedMountain}
+          options={this.state.mountainList}
+          onChange={this.dropdownChanged.bind(this)}
+        />
         {
           this.state.mountainData.days
-          ?
-          this.state.mountainData.days.map((dayData, index) => {
-            return dayData.times ? <ContentRow key={dayData.name + index} data={dayData} /> : null;
-          })
-          :
-          <Loading />
+            ?
+            this.state.mountainData.days.map((dayData, index) => {
+              return dayData.times ? <ContentRow key={dayData.name + index} data={dayData} /> : null;
+            })
+            :
+            <Loading />
         }
       </div>
     );
