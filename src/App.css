@@ -1,24 +1,145 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+.app-header {
+  background-color: #283593;
+  height: 64px;
   padding: 20px;
-  color: white;
+  display: flex;
+  color: #fafafa;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
 }
-
-.App-intro {
-  font-size: large;
+.app-header > div {
+  margin-right: 20px;
+  font-weight: 400;
+  font-size: 24px;
+  right: 0px;
+  width: 100%;
+  text-align: right;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather-card {
+  max-width: 760px;
+  box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12), 0 0.1875rem 0.0625rem -0.125rem rgba(0, 0, 0, 0.2);
+  border: 0.0625rem solid #bdbdbd;
+  width: 100%;
+  border-radius: 0.1875rem;
+  margin: 0.5rem 0rem;
+  overflow: hidden;
+  display: block;
+}
+
+h2 {
+  padding: 0.5em 1em;
+}
+
+.weather-card-inner {
+  display: flex;
+  width: 100%;
+}
+.content-block {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #d3d3d3;
+  padding: 10px 10px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.content-block:last-of-type {
+  border-right: none;
+}
+.data-block-title {
+  padding-left: 0.2rem;
+  text-align: center;
+  height: 60px;
+}
+
+.data-block-subcontent-wrapper{
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+.measurement-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.measurement-row > div {
+  width: 100%;
+  text-align: right;
+}
+.icon img {
+  max-width: 32px;
+}
+.weather-card-day-4,
+.weather-card-day-5,
+.weather-card-day-6 {
+  display: none;
+}
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: #283593;
+  border-radius: 5px;
+  padding-top: 12px;
+  position: absolute;      /* Add these */
+  left: -35px;
+  z-index: 1;
+  opacity: 0;
+}
+  .open {
+    display:flex;
+    opacity: 1;
+  }
+.menu a {
+  list-style: none;
+  border-bottom: 1px solid #FFF;
+
+  padding: 0 40px 10px 20px;
+  margin: 10px;
+}
+.menu a:last-of-type {
+  border-bottom: none;
+}
+.top-level-menu{
+  position: relative;
+  list-style: none;
+}
+.add-button {
+  cursor: pointer;
+  z-index:2;
+  font-size: 24px;
+  font-weight: 400;
+}
+.menu li:hover {
+  cursor: pointer;
+}
+@media only screen and (max-width: 400px){
+  .menu{
+    width: 160px;
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 760px){
+  .weather-card-day-4,
+  .weather-card-day-5,
+  .weather-card-day-6 {
+    display: flex;
+  }
+} 
