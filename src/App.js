@@ -97,7 +97,7 @@ class App extends Component {
               </ul>
             </li>
           </ul>
-          <div>🏂Snow App</div>
+          <div>🏂 Snow App <a href='mailto:hungmle38@gmail.com'>💌</a></div>
         </header>
         <div className='content'>
           {this.state.activeMountains.length > 0 && this.state.activeMountains.map((mtn) =>
