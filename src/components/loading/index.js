@@ -5,7 +5,9 @@ import './index.css';
 class App extends Component {
   render() {
     return (
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className='spinner-div'>
+        <img src={logo} className="App-logo" alt="logo" />
+      </div>
     );
   }
 }

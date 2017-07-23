@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import WeatherCard from './weather-card';
+import TutorialCard from './tutorial-card';
+import * as localforage from 'localforage';
 
 const prettyTitle = function (titlestring) {
   var splitStr = titlestring.toLowerCase().split('-');
@@ -38,18 +40,38 @@ class App extends Component {
         'silver-star',
         'sun-peaks',
         'revelstoke'],
-      activeMountains: ['cypress-mountain']
+      activeMountains: []
     };
   }
   componentWillMount() {
+    let that = this;
+    localforage.getItem('activeMountains').then(function (value) {
+      console.log('cachedMountains', value);
+      if (!!value) { that.setState({ activeMountains: value }); }
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
   addCard(num) {
     if (this.state.activeMountains.length === 0 ||
       this.state.activeMountains.findIndex(elem => elem === this.state.mountainList[num]) === -1) {
+      localforage.setItem('activeMountains', this.state.activeMountains.concat(this.state.mountainList[num]))
+        .then(function (value) {
+          console.log("mountainsCached", value);
+        }).catch(function (err) {
+          console.log(err);
+        });
       this.setState({ activeMountains: this.state.activeMountains.concat(this.state.mountainList[num]) });
     }
   }
   delCard() {
+    localforage.removeItem('activeMountains').then(function () {
+      // Run this code once the key has been removed.
+      console.log('Key is cleared!');
+    }).catch(function (err) {
+      // This code runs if there were any errors
+      console.log(err);
+    });
     this.setState({ activeMountains: [] });
   }
   navClick = () => {
@@ -91,18 +113,22 @@ class App extends Component {
             <li className='add-button' onClick={this.navClick}>Add
             <ul className='menu'>
                 {this.state.mountainList.map((mtn, i) =>
-                  <a key={mtn+i} onClick={this.addCard.bind(this, i)}><li>{prettyTitle(mtn)}</li></a>
+                  <a key={mtn + i} onClick={this.addCard.bind(this, i)}><li>{prettyTitle(mtn)}</li></a>
                 )}
                 <a onClick={this.delCard.bind(this)}><li>Remove all</li></a>
               </ul>
             </li>
           </ul>
-          <div>🏂 Snow App <a href='mailto:hungmle38@gmail.com'>💌</a></div>
+          <div>🏂 Powder Day <a href='mailto:hungmle38@gmail.com'>💌</a></div>
         </header>
         <div className='content'>
           {this.state.activeMountains.length > 0 && this.state.activeMountains.map((mtn) =>
             <WeatherCard key={mtn} apiRoute={mtn} />
           )}
+          {
+            this.state.activeMountains.length === 0 &&
+            <TutorialCard />
+          }
         </div>
 
 
