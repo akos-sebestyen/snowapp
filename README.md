@@ -19,3 +19,4 @@
     * Add Squamish :)
     * Provide total rainfall/snowfall?
     * Look into providing previous days rainfall/snowfall
+    * Look into sending EMAIL(mailchimp?) alerts for incoming powder days. I probably should worry about finding this information first...
