@@ -12,4 +12,5 @@
     * Change Loading spinner
 * 1.2
     * Change 'Add' Button to something more inuitive.
+    * Add Individual Card Deletion
 
