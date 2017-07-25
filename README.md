@@ -16,7 +16,7 @@
     * **BOLD** significant weather forecasts...
     * Provide some sort of analysis panel? 
 * 1.3
-    * Add Squamish :)
+    * SSL
     * Provide total rainfall/snowfall?
     * Look into providing previous days rainfall/snowfall
     * Look into sending EMAIL(mailchimp?) alerts for incoming powder days. I probably should worry about finding this information first...
