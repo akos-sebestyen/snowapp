@@ -15,6 +15,7 @@
     * Add Individual Card Deletion (Maybe look at swipe gestures?)
     * **BOLD** significant weather forecasts...
     * Have Loader before react app finishes downloading
+    * Have a branding icon and set to icon used when adding app to homescreen.
     * Provide some sort of analysis panel? 
 * 1.3
     * SSL
