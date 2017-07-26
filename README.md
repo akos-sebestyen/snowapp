@@ -14,6 +14,7 @@
     * Change 'Add' Button to something more inuitive.
     * Add Individual Card Deletion (Maybe look at swipe gestures?)
     * **BOLD** significant weather forecasts...
+    * Have Loader before react app finishes downloading
     * Provide some sort of analysis panel? 
 * 1.3
     * SSL
