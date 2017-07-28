@@ -10,6 +10,7 @@
     * ✔️ Change Favicon
     * Tutorial Card...
     * Change Loading spinner
+    * **CRITICAL** Redirect www to non-www
 * 1.2
     * Change 'Add' Button to something more inuitive.
     * Add Individual Card Deletion (Maybe look at swipe gestures?)
