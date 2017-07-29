@@ -2,10 +2,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: #ECEFF1;
+}
 .app-header {
-  background-color: #283593;
+  background-color: #512DA8; /*#283593;*/
   height: 64px;
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
   color: #fafafa;
   flex-direction: row;
@@ -13,7 +16,8 @@
   justify-content: flex-end;
 }
 .app-header > div {
-  margin-right: 20px;
+  margin-right: 0.2rem;
+  padding: 16px;
   font-weight: 400;
   font-size: 24px;
   right: 0px;
@@ -33,6 +37,7 @@
 }
 
 .weather-card {
+  background-color: #fafafa;
   max-width: 760px;
   box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12), 0 0.1875rem 0.0625rem -0.125rem rgba(0, 0, 0, 0.2);
   border: 0.0625rem solid #bdbdbd;
@@ -42,23 +47,51 @@
   overflow: hidden;
   display: block;
 }
+
+.weather-card:last-of-type {
+  margin-bottom: 3rem;
+}
 .tutorial-card {
   display: block;
-  max-width: 760px;
-  position: relative;
+  margin:auto;
   font-style: italic;
-  background: #e0e0e0;
-  margin: 0.5rem;
-  padding: 0.5rem 0.5rem 1.5rem;
-  border-left: 0.25rem solid #3f51b5;
-  border-radius: 0 0.1875rem 0.1875rem 0;
-  box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12), 0 0.1875rem 0.0625rem -0.125rem rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  position: absolute;
+  top: 30%;
+  height: 300px;
+  text-align: center;
+  width: 80%;
+  color: #B0BEC5;
 }
-.tutorial-card-inner {
+.weather-card-header {
   display: flex;
-  width: 100%;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-between;
 }
-
+.delete-button {
+  padding-top: 0.3rem;
+  padding-right: 0.2rem;
+  font-size: 32px;
+  color: #9575CD;
+  cursor: pointer;
+}
+.email-link{
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 24px;
+  /* transform: rotate3d(0, 0, 0);
+  transition: transform .25s ease-in;
+}
+.email-link:hover {
+  transform: rotate3d(0, 0, 1, -35deg);
+  transition: transform .25s ease-in;
+}
+.email-link:active {
+  transform: rotate3d(0, 0, 1, -35deg);
+  transition: transform .25s ease-in; */
+}
 h2 {
   padding: 0.5em 1em;
 }
@@ -103,52 +136,86 @@ h2 {
 .icon img {
   max-width: 32px;
 }
+.weather-card-day-3,
 .weather-card-day-4,
 .weather-card-day-5,
 .weather-card-day-6 {
   display: none;
 }
-.menu {
-  display: none;
-  flex-direction: column;
-  background-color: #283593;
-  border-radius: 5px;
-  padding-top: 12px;
-  position: absolute;      /* Add these */
-  left: -35px;
-  z-index: 1;
-  opacity: 0;
-}
+
 .spinner-div{
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 
-  .open {
-    display:flex;
-    opacity: 1;
-  }
-.menu a {
-  list-style: none;
-  border-bottom: 1px solid #FFF;
-
-  padding: 0 40px 10px 20px;
-  margin: 10px;
+.menu {
+  display: block;
+  flex-direction: column;
+  background-color: #311B92;
+  color: #fafafa;
+  border-radius: 5px;
+   padding-top: 64px; 
+  top: 0px;
+  left: 0px;
+  position: absolute;      /* Add these */
+   left: -64px;  
+  margin: 0;
+  z-index: 3; 
+  opacity: 1;
+  font-size: 24px;
+  transform: translate3d(-20rem, 0, 0);
+  transition: transform .25s ease-in-out;
 }
-.menu a:last-of-type {
+a:link{
+  text-decoration: none;
+}
+.open {
+  display:flex;
+  opacity: 1;
+  transform: translate3d(1rem, 0, 0);
+  transition: transform .25s ease-in-out;
+}
+.menu li {
+  list-style: none;
+  border-bottom: 1px solid #673AB7; 
+  border-top: 1px solid #263238;
+
+  padding: 5px 40px 5px 20px;
+  margin: 0px;
+}
+.menu li div {
+  padding: 5px;
+}
+.menu div {
+  height: 100%;
+  width: 100%;
+}
+.menu li:last-of-type {
   border-bottom: none;
 }
 .top-level-menu{
   position: relative;
   list-style: none;
 }
+
 .add-button {
   cursor: pointer;
-  z-index:2;
-  font-size: 24px;
+  z-index:4;
+  font-size: 44px;
   font-weight: 400;
+  height: 64px;
+  line-height: 64px;
+  transform: rotate3d(0, 0, 1, 0deg);
+  transition: transform .25s ease-in-out;
 }
+.add-button.tilt {
+  transform: rotate3d(0, 0, 1, 45deg);
+  transition: transform .25s ease-in-out;
+}
+/* .add-button:hover {
+  color: #B39DDB;
+} */
 .menu li:hover {
   cursor: pointer;
 }
@@ -159,6 +226,7 @@ h2 {
   }
 }
 @media only screen and (min-width: 760px){
+  .weather-card-day-3,
   .weather-card-day-4,
   .weather-card-day-5,
   .weather-card-day-6 {

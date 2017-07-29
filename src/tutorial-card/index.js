@@ -4,9 +4,7 @@ class TutorialCard extends Component {
     render() {
         return (
             <div className='tutorial-card'>
-                <div className='tutorial-card-inner'>
-                    Add a Ski Resort to this list.
-                </div>
+                    Add a Mountain to get started.
             </div>
         );
     }

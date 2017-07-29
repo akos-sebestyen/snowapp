@@ -28,15 +28,19 @@ class WeatherCard extends Component {
             <div className='weather-card'>
                 {this.state.mountainData.days ?
                     <div>
-                        <h2>
-                            {this.state.mountainData.name ? prettyTitle(this.state.mountainData.name) : null}
-                        </h2>
+                        <div className='weather-card-header'>
+                            <h2>
+                                {this.state.mountainData.name ? prettyTitle(this.state.mountainData.name) : null}
+                            </h2>
+                            <i onClick={this.props.deleteCard} 
+                            className='icon-cancel-circled2 delete-button'></i>
+                        </div>
                         <div className='weather-card-inner'>
                             {
                                 this.state.mountainData.days
                                     ?
                                     this.state.mountainData.days.map((dayData, index) => {
-                                        return dayData.time && index ?
+                                        return dayData.time && index < 5?
                                             <DayBlock key={dayData.name + index}
                                                 data={dayData}
                                                 type={'weather-card-day-' + index} /> :
