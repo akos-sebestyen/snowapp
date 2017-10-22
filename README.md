@@ -1,6 +1,6 @@
 # Snow App
 
-## Snowforecast for local resorts at a glance.
+## Snow forecast for local resorts at a glance.
 
 *TODO:*
 * 1.1
@@ -14,14 +14,15 @@
     * ✔️ **CRITICAL** Redirect www to non-www
 * 1.2
     * ✔️ Change 'Add' Button to something more inuitive.
-    * ✔️ Add Individual Card Deletion (Maybe look at swipe gestures?)
+    * ✔️ Add Individual Card Deletion
     * **BOLD** significant weather forecasts...
     * Have Loader before react app finishes downloading
     * Have a branding icon and set to icon used when adding app to homescreen.
     * Provide some sort of analysis panel? 
     * Rejig API for more accurate readings?
+    * Maybe look at swipe gestures?
 * 1.3
-    * SSL
+    * ✔️ SSL
     * Provide total rainfall/snowfall?
     * Look into providing previous days rainfall/snowfall
     * Look into sending EMAIL(mailchimp?) alerts for incoming powder days. I probably should worry about finding this information first...
