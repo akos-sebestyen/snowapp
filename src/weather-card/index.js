@@ -8,7 +8,7 @@ const prettyTitle = function (titlestring) {
     return splitStr.map(function (i) { return i.charAt(0).toUpperCase() + i.substring(1); }).join(' ');
 }
 
-const WeatherCard = ({ days = null, name, webcamUrl = '', deleteCard }) => {
+const WeatherCard = ({ days = null, name, webcamUrl = '', deleteCard, openPopup }) => {
     return (
         <div className='weather-card'>
             {days ?
@@ -19,7 +19,7 @@ const WeatherCard = ({ days = null, name, webcamUrl = '', deleteCard }) => {
                             {name ? prettyTitle(name) : null}
                         </h2>
                         {webcamUrl != '' &&
-                        (<h2 className='webcam-button'>
+                        (<h2 className='webcam-button' onClick={openPopup.bind(this, webcamUrl)} value={webcamUrl}>
                             📷
                         </h2>)}
                         </div>

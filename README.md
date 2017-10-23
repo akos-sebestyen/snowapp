@@ -21,6 +21,7 @@
     * Provide some sort of analysis panel? 
     * Rejig API for more accurate readings?
     * Maybe look at swipe gestures?
+    * ✔️ Add (limited) webcam feed support. (done little 🐍)
 * 1.3
     * ✔️ SSL
     * Provide total rainfall/snowfall?

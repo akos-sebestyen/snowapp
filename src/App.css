@@ -29,7 +29,10 @@ body{
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+@keyframes collapse-card{
+  from { height: 100%;}
+  to { height: 0%;}
+}
 .content {
   display: flex;
   align-items: center;
@@ -47,6 +50,10 @@ body{
   overflow: hidden;
   display: block;
 }
+/* .weather-card:hover {
+  animation: collapse-card 2s ease-in;
+  height: 0;
+} */
 
 .weather-card:last-of-type {
   margin-bottom: 3rem;
@@ -68,6 +75,13 @@ body{
   flex-direction: row;
   /* align-items: center; */
   justify-content: space-between;
+}
+.weather-card-header > div{
+  display:flex;
+}
+.webcam-button {
+  padding: 0.5em 0;
+  cursor: pointer;
 }
 .delete-button {
   padding-top: 0.3rem;
@@ -218,6 +232,42 @@ a:link{
 } */
 .menu li:hover {
   cursor: pointer;
+}
+
+.modal-bg {
+  z-index: 1000;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  justify-content: space-around;
+}
+.modal-card {
+  padding: 0.5em 0.5em;
+  margin: 0.25em 0.5em;
+}
+.modal-header{
+  justify-content: flex-end;
+}
+.modal-header > i {
+  padding-top: 0rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.3rem;
+}
+.modal-image > img {
+  width: 100%;
 }
 @media only screen and (max-width: 400px){
   .menu{

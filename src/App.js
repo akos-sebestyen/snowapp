@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import WeatherCard from './weather-card';
 import TutorialCard from './tutorial-card';
+import Modal from './components/modal';
 import localforage from 'localforage';
 
 const prettyTitle = function (titlestring) {
@@ -40,7 +41,8 @@ class App extends Component {
         'silver-star',
         'sun-peaks',
         'revelstoke'],
-      activeMountains: []
+      activeMountains: [],
+      popup: ''
     };
   }
   componentWillMount() {
@@ -63,6 +65,12 @@ class App extends Component {
         });
       this.setState({ activeMountains: this.state.activeMountains.concat(this.state.mountainList[num]) });
     }
+  }
+  displayPopup(url){
+    this.setState({popup: url});
+  }
+  closePopup(){
+    this.setState({popup: ''});
   }
   // delCard() {
   //   localforage.removeItem('activeMountains').then(function () {
@@ -138,7 +146,7 @@ class App extends Component {
         </ul>
         <div className='content'>
           {this.state.activeMountains.length > 0 && this.state.activeMountains.map((mtn) =>
-            <WeatherCard key={mtn} apiRoute={mtn} deleteCard={this.delCard.bind(this, mtn)} />
+            <WeatherCard key={mtn} apiRoute={mtn} deleteCard={this.delCard.bind(this, mtn)} openPopup={this.displayPopup.bind(this)}/>
           )}
           {
             this.state.activeMountains.length === 0 &&
@@ -146,7 +154,7 @@ class App extends Component {
           }
         </div>
         <a href='mailto:hungmle38@gmail.com' className='email-link'>💌</a>
-
+        {this.state.popup && <Modal imgUrl={this.state.popup} closeFunc={this.closePopup.bind(this)}/>}
       </div>
     );
   }
