@@ -28,3 +28,4 @@
     * Look into providing previous days rainfall/snowfall
     * Look into sending EMAIL(mailchimp?) alerts for incoming powder days. I probably should worry about finding this information first...
     * Animate deleting cards (is there an easy way to do this?)
+    * Add multiple webcam feed per mountain.
