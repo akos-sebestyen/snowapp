@@ -38,7 +38,6 @@ class dataBlockShort extends Component {
                     this.findTotal(this.props.data)
                 }
                 </div>
-                <image src={rainimg} />
             </div>
         );
     }

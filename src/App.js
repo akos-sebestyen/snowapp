@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import WeatherCard from './weather-card';
 import TutorialCard from './tutorial-card';
-import * as localforage from 'localforage';
+import localforage from 'localforage';
 
 const prettyTitle = function (titlestring) {
   var splitStr = titlestring.toLowerCase().split('-');
