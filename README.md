@@ -21,6 +21,7 @@
     * Provide some sort of analysis panel? 
     * Rejig API for more accurate readings?
     * Maybe look at swipe gestures?
+    * Add Seymour, Grouse and Baker
     * ✔️ Add (limited) webcam feed support. (done little 🐍)
 * 1.3
     * ✔️ SSL
@@ -28,3 +29,7 @@
     * Look into providing previous days rainfall/snowfall
     * Look into sending EMAIL(mailchimp?) alerts for incoming powder days. I probably should worry about finding this information first...
     * Animate deleting cards (is there an easy way to do this?)
+    * Add multiple webcam feed per mountain.
+    * Fix Open/Close animation of _Add_ button.
+    * Proxy webcam images.
+    
