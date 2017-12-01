@@ -15,12 +15,12 @@ const WeatherCard = ({ days = null, name, webcamUrl = '', deleteCard, openPopup 
                 <div>
                     <div className='weather-card-header'>
                         <div>
-                        <h2>
-                            {name ? prettyTitle(name) : null}
-                        </h2>
-                        {webcamUrl != '' &&
-                        (<h2 className='webcam-button' onClick={openPopup.bind(this, webcamUrl)} value={webcamUrl}>
-                            📷
+                            <h2>
+                                {name ? prettyTitle(name) : null}
+                            </h2>
+                            {webcamUrl != '' &&
+                                (<h2 className='webcam-button' onClick={openPopup.bind(this, webcamUrl)} value={webcamUrl}>
+                                    📷
                         </h2>)}
                         </div>
                         <i onClick={deleteCard}
@@ -42,7 +42,14 @@ const WeatherCard = ({ days = null, name, webcamUrl = '', deleteCard, openPopup 
                     </div>
                 </div>
                 :
-                <Loading />
+                <div>
+                    <div className='weather-card-header'>
+                        <div/>
+                        <i onClick={deleteCard}
+                            className='icon-cancel-circled2 delete-button '></i>
+                    </div>
+                    <Loading />
+                </div>
             }
         </div>
     );

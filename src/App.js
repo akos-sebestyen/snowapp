@@ -66,20 +66,12 @@ class App extends Component {
       this.setState({ activeMountains: this.state.activeMountains.concat(this.state.mountainList[num]) });
     }
   }
-  displayPopup(url){
-    this.setState({popup: url});
+  displayPopup(url) {
+    this.setState({ popup: url });
   }
-  closePopup(){
-    this.setState({popup: ''});
+  closePopup() {
+    this.setState({ popup: '' });
   }
-  // delCard() {
-  //   localforage.removeItem('activeMountains').then(function () {
-  //     console.log('Key is cleared!');
-  //   }).catch(function (err) {
-  //     console.log(err);
-  //   });
-  //   this.setState({ activeMountains: [] });
-  // }
   delCard(card) {
     const cardIndex = this.state.activeMountains.findIndex(mtn => mtn === card);
     var newState = this.state.activeMountains.slice();
@@ -146,7 +138,7 @@ class App extends Component {
         </ul>
         <div className='content'>
           {this.state.activeMountains.length > 0 && this.state.activeMountains.map((mtn) =>
-            <WeatherCard key={mtn} apiRoute={mtn} deleteCard={this.delCard.bind(this, mtn)} openPopup={this.displayPopup.bind(this)}/>
+            <WeatherCard key={mtn} apiRoute={mtn} deleteCard={this.delCard.bind(this, mtn)} openPopup={this.displayPopup.bind(this)} />
           )}
           {
             this.state.activeMountains.length === 0 &&
@@ -154,7 +146,7 @@ class App extends Component {
           }
         </div>
         <a href='mailto:hungmle38@gmail.com' className='email-link'>💌</a>
-        {this.state.popup && <Modal imgUrl={this.state.popup} closeFunc={this.closePopup.bind(this)}/>}
+        {this.state.popup && <Modal imgUrl={this.state.popup} closeFunc={this.closePopup.bind(this)} />}
       </div>
     );
   }
