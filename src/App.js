@@ -10,37 +10,26 @@ const prettyTitle = function (titlestring) {
   return splitStr.map(function (i) { return i.charAt(0).toUpperCase() + i.substring(1); }).join(' ');
 }
 
-
-// Close the dropdown menu if the user clicks outside of it
-// window.onclick = function (event) {
-//   if (!event.target.matches('.dropbtn')) {
-
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// }
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mountainList: ['whistler-blackcomb',
+      mountainList: [
+        'whistler-blackcomb',
         'apex',
         'big-white',
+        'baker-mountain',
         'cypress-mountain',
         'fernie',
+        'grouse-mountain',
         'kicking-horse',
         'manning-park-resort',
         'mount-washington',
         'silver-star',
         'sun-peaks',
-        'revelstoke'],
+        'revelstoke',
+        'mount-seymour'
+      ],
       activeMountains: [],
       popup: ''
     };
@@ -70,7 +59,7 @@ class App extends Component {
     this.setState({popup: url});
   }
   closePopup(){
-    this.setState({popup: ''});
+    this.setState({popup: null});
   }
   // delCard() {
   //   localforage.removeItem('activeMountains').then(function () {
@@ -124,7 +113,7 @@ class App extends Component {
   debounce = (e) => {
     if (e.target.classList.contains('add-button')) { return; }
     let navMenu = document.getElementsByClassName('menu')[0];
-    let addButton = document.getElementsByClassName('menu')[0];
+    let addButton = document.getElementsByClassName('add-button')[0];
     if (!!navMenu && navMenu.classList.contains('open')) {
       navMenu.classList.remove('open');
     }
@@ -154,7 +143,7 @@ class App extends Component {
           }
         </div>
         <a href='mailto:hungmle38@gmail.com' className='email-link'>💌</a>
-        {this.state.popup && <Modal imgUrl={this.state.popup} closeFunc={this.closePopup.bind(this)}/>}
+        {this.state.popup && <Modal imgUrls={this.state.popup} closeFunc={this.closePopup.bind(this)}/>}
       </div>
     );
   }
