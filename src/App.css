@@ -256,6 +256,7 @@ a:link{
 }
 .modal-card {
   padding: 0.5em 0.5em;
+  position:relative;
   margin: 0.25em 0.5em;
 }
 .modal-header{
@@ -283,3 +284,19 @@ a:link{
     display: flex;
   }
 } 
+.modal-back-button{
+  position:absolute;
+  top: 40%;
+  left: 2%;
+  font-weight: 900;
+  font-size: 40px;
+  cursor: pointer;
+}
+.modal-forward-button{
+  top: 40%;
+  right: 2%;
+  position: absolute;
+  font-weight: 900;
+  font-size: 40px;
+  cursor: pointer;
+}

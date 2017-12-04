@@ -16,20 +16,23 @@
     * ✔️ Change 'Add' Button to something more inuitive.
     * ✔️ Add Individual Card Deletion
     * **BOLD** significant weather forecasts...
-    * Have Loader before react app finishes downloading
     * Have a branding icon and set to icon used when adding app to homescreen.
     * Provide some sort of analysis panel? 
-    * Rejig API for more accurate readings?
+    * Rejig API for more accurate readings? (ie sometimes I'm adding multiple days)
     * Maybe look at swipe gestures?
-    * Add Seymour, Grouse and Baker
+    * ✔️ Add Seymour, Grouse and Baker
     * ✔️ Add (limited) webcam feed support. (done little 🐍)
 * 1.3
     * ✔️ SSL
+    * Add visibility? 
     * Provide total rainfall/snowfall?
     * Look into providing previous days rainfall/snowfall
     * Look into sending EMAIL(mailchimp?) alerts for incoming powder days. I probably should worry about finding this information first...
     * Animate deleting cards (is there an easy way to do this?)
+    * ✔️ _Support_ multiple webcam feeds.
     * Add multiple webcam feed per mountain.
-    * Fix Open/Close animation of _Add_ button.
+        * ✔️ Cypress
+    * ✔️ Fix Open/Close animation of _Add_ button.
     * Proxy webcam images.
+    * Have Loader before react app finishes downloading
     
